@@ -1,3 +1,75 @@
-My brand new index dot html file<br>
---<br>
-Srdjan<br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Image Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            font-family: Arial, sans-serif;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-container {
+            width: 30%;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Array of images
+        var images = [
+            'image1.jpeg',
+            'image2.jpeg',
+            'image3.jpeg'
+            // Add more image file names as needed
+        ];
+
+        // Function to generate HTML for an image
+        function generateImageHTML(image) {
+            var imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            imageContainer.onclick = function() { openImage(image); };
+
+            var img = document.createElement('img');
+            img.src = image;
+            img.alt = image;
+
+            imageContainer.appendChild(img);
+
+            return imageContainer;
+        }
+
+        // Function to open an image in a new tab
+        function openImage(imageSrc) {
+            window.open(imageSrc, '_blank');
+        }
+
+        // When the page loads, generate the HTML for the images
+        window.onload = function() {
+            var body = document.body;
+
+            for (var i = 0; i < images.length; i++) {
+                body.appendChild(generateImageHTML(images[i]));
+            }
+        };
+    </script>
+</body>
+</html>
