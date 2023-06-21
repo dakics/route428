@@ -36,6 +36,7 @@
     </style>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
         // Function to generate HTML for an image
         function generateImageHTML(image) {
@@ -59,6 +60,9 @@
 
         // When the page loads, generate the HTML for the images
         window.onload = function() {
+
+            document.getElementById('content').innerHTML = marked.parse('# Marked in the browser\n\nRendered by **marked**.');
+
             var body = document.body;
 
             // Get the list of images from the server
@@ -74,11 +78,6 @@
             }
             xhr.send();
         };
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        document.getElementById('content').innerHTML = marked.parse('# Marked in the browser\n\nRendered by **marked**.');
     </script>
 
     <div id="content"></div>
