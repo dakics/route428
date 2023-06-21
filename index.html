@@ -34,14 +34,6 @@
 </head>
 <body>
     <script>
-        // Array of images
-        var images = [
-            'image1.jpeg',
-            'image2.jpeg',
-            'image3.jpeg'
-            // Add more image file names as needed
-        ];
-
         // Function to generate HTML for an image
         function generateImageHTML(image) {
             var imageContainer = document.createElement('div');
@@ -66,9 +58,18 @@
         window.onload = function() {
             var body = document.body;
 
-            for (var i = 0; i < images.length; i++) {
-                body.appendChild(generateImageHTML(images[i]));
+            // Get the list of images from the server
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'images.txt', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    var images = xhr.responseText.split('\n');
+                    for (var i = 0; i < images.length; i++) {
+                        body.appendChild(generateImageHTML(images[i]));
+                    }
+                }
             }
+            xhr.send();
         };
     </script>
 </body>
