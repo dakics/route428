@@ -2,21 +2,45 @@ body {
     font-family: Arial, sans-serif;
     color: #333;
     line-height: 1.6;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 .wrapper {
     display: flex;
+    height: 100%;
+}
+
+.sidebar, .content {
+    position: relative;
+    overflow: hidden;
+}
+
+.scrollable {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+    padding: 1em;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollable::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
 }
 
 .sidebar {
     width: 25%;
-    padding: 1em;
     border-right: 1px solid #ddd;
 }
 
 .content {
     width: 75%;
-    padding: 1em;
 }
 
 #profile-pic {

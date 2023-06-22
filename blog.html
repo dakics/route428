@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Site</title>
     <link rel="stylesheet" href="blog-style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <div class="sidebar">
-            <!-- <img src="/assets/your-image.jpg" alt="your photo" id="profile-pic"> -->
-            <img src="image1.jpeg" alt="your photo" id="profile-pic">
-            <h2 id="my-name">Your Name</h2>
-            <div id="short-bio">Short bio...</div>
-            <a href="#" id="more-link">More...</a>
-            <div id="posts-links"></div>
+            <div class="scrollable">
+                <!-- <img src="/assets/your-image.jpg" alt="your photo" id="profile-pic"> -->
+                <img src="image1.jpeg" alt="your photo" id="profile-pic">
+                <h2 id="my-name">Your Name</h2>
+                <div id="short-bio">Short bio...</div>
+                <a href="#" id="more-link">More...</a>
+                <div id="posts-links"></div>
+            </div>
         </div>
-        <div class="content" id="post-content"></div>
+        <div class="content">
+            <div class="scrollable" id="post-content"></div>
+        </div>
     </div>    
-
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="module" src="blog-main.js"></script>
 </body>
 </html>

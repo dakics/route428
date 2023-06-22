@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     fetch(`/assets/${post.link}`)
                         .then(response => response.text())
                         .then(md => {
-                            document.getElementById('post-content').innerHTML = post.title; // marked(md);
+                            document.getElementById('post-content').innerHTML = marked(md);
                         });
                 });
                 postsLinks.appendChild(postLink);
