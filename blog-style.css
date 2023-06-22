@@ -14,7 +14,7 @@ body {
 }
 
 .top-bar {
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
@@ -64,7 +64,7 @@ body {
 
 @media (min-width: 800px) {
     .top-bar {
-        display: flex;
+        display: none;
     }
     .sidebar {
         width: 25%;
