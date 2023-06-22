@@ -10,10 +10,11 @@ body {
 
 .wrapper {
     display: flex;
+    flex-direction: column;
 }
 
 .top-bar {
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
@@ -23,6 +24,7 @@ body {
 
 #menu-btn {
     font-size: 1.5em;
+    display: none;
 }
 
 .sidebar, .content {
@@ -61,15 +63,27 @@ body {
 }
 
 @media (min-width: 800px) {
-    .top-bar {
-        display: flex;
+    .wrapper {
+        flex-direction: row;
     }
+
+    .top-bar {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #menu-btn {
+        display: none;
+    }
+
     .sidebar {
         width: 25%;
     }
+
     .sidebar.open {
         width: 25%;
     }
+
     .content {
         width: 75%;
     }
