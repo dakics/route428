@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 1em;
+    border-right: 1px solid #ddd;
+}
+
+.content {
+    width: 75%;
+    padding: 1em;
+}
+
+#profile-pic {
+    width: 100%;
+    height: auto;
+}
+
+#posts-links {
+    margin-top: 2em;
+}
+
+#posts-links a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+#posts-links a:hover {
+    color: blue;
+}
