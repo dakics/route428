@@ -10,11 +10,11 @@ body {
 
 .wrapper {
     display: flex;
-    flex-direction: column;
+    height: 100vh;
 }
 
 .top-bar {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
@@ -24,12 +24,12 @@ body {
 
 #menu-btn {
     font-size: 1.5em;
-    display: none;
 }
 
 .sidebar, .content {
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .scrollable {
@@ -63,27 +63,15 @@ body {
 }
 
 @media (min-width: 800px) {
-    .wrapper {
-        flex-direction: row;
-    }
-
     .top-bar {
-        flex-direction: column;
-        justify-content: flex-start;
+        display: flex;
     }
-
-    #menu-btn {
-        display: none;
-    }
-
     .sidebar {
         width: 25%;
     }
-
     .sidebar.open {
         width: 25%;
     }
-
     .content {
         width: 75%;
     }
