@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         .then(response => response.text())
                         .then(md => {
                             console.log(md);
-                            document.getElementById('post-content').innerHTML = marked.parse('# Marked in the browser\n\nRendered by **marked**.'); // marked(md);
+                            document.getElementById('post-content').innerHTML = marked.parse(md);
                         });
                 });
                 postsLinks.appendChild(postLink);

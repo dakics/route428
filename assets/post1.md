@@ -1,1 +1,1 @@
-Post 1
+This is **Post 1** rendered by _marked_
