@@ -1,5 +1,3 @@
-import marked from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-
 document.addEventListener('DOMContentLoaded', function() {
     fetch('/assets/blog-posts.json')
         .then(response => response.json())
