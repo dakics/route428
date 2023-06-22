@@ -10,7 +10,19 @@ body {
 
 .wrapper {
     display: flex;
-    height: 100%;
+}
+
+.top-bar {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+#menu-btn {
+    font-size: 1.5em;
 }
 
 .sidebar, .content {
@@ -35,12 +47,32 @@ body {
 }
 
 .sidebar {
-    width: 25%;
-    border-right: 1px solid #ddd;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.sidebar.open {
+    width: 80%;
+    max-width: 400px;
 }
 
 .content {
-    width: 75%;
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .top-bar {
+        display: flex;
+    }
+    .sidebar {
+        width: 25%;
+    }
+    .sidebar.open {
+        width: 25%;
+    }
+    .content {
+        width: 75%;
+    }
 }
 
 #profile-pic {
