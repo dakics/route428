@@ -1,88 +1,49 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <title>My Image Gallery</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A gallery of my favorite images.">
-    <meta charset="utf-8"/>
-    <!-- empty transparent 1x1 pixel PNG favicon -->
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" type="image/png" />
-    <style>
-        body {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background-color: #f1f1f1;
-            font-family: Arial, sans-serif;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-        .image-container {
-            width: 30%;
-            margin: 10px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        @media (max-width: 768px) {
-            .image-container {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // Function to generate HTML for an image
-        function generateImageHTML(image) {
-            var imageContainer = document.createElement('div');
-            imageContainer.className = 'image-container';
-            imageContainer.onclick = function() { openImage(image); };
-
-            var img = document.createElement('img');
-            img.src = image;
-            img.alt = image;
-
-            imageContainer.appendChild(img);
-
-            return imageContainer;
-        }
-
-        // Function to open an image in a new tab
-        function openImage(imageSrc) {
-            window.open(imageSrc, '_blank');
-        }
-
-        // When the page loads, generate the HTML for the images
-        window.onload = function() {
-
-            document.getElementById('content').innerHTML = marked.parse('# Marked in the browser\n\nRendered by **marked**.');
-
-            var body = document.body;
-
-            // Get the list of images from the server
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'images.txt', true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var images = xhr.responseText.split('\n');
-                    for (var i = 0; i < images.length; i++) {
-                        body.appendChild(generateImageHTML(images[i].trim()));
-                    }
-                }
-            }
-            xhr.send();
-        };
-    </script>
-
-    <div id="content"></div>
-
-</body>
+	<head>
+		<title>Srdjan Dakic</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+		<meta name="description" content="Srdjan Dakic's personal page" />
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="assets/main.css" />
+        <link rel=“canonical” href="https://route428.com/" />
+		<noscript><link rel="stylesheet" href="assets/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
+		<div id="wrapper">
+			<div id="main">
+				<div class="inner">
+					<div id="image01" class="image">
+						<img src="assets/images/image01.jpg" alt="" />
+					</div>
+					<h1 id="title">Srdjan Dakic</h1>
+					<hr id="divider02">
+					<p id="text01"><span>Android Consultant</span><br /><span>Slovenia</span></p>
+					<hr id="divider01">
+					<ul id="icons01" class="icons">
+						<li>
+							<a class="n01" href="https://linkedin.com/in/dakics">
+								<svg><use xlink:href="assets/icons.svg#linkedin"></use></svg>
+								<span class="label">LinkedIn</span>
+							</a>
+						</li>
+                        <!-- <li>
+							<a class="n02" href="https://twitter.com/dakics">
+								<svg><use xlink:href="assets/icons.svg#twitter"></use></svg>
+								<span class="label">Twitter</span>
+							</a>
+						</li> -->
+                        <li>
+							<a class="n03" href="https://github.com/dakics">
+								<svg><use xlink:href="assets/icons.svg#github"></use></svg>
+								<span class="label">GitHub</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="assets/main.js"></script>
+	</body>
 </html>
